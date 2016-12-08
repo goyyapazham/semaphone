@@ -9,6 +9,9 @@
 
 int main() {
 
+  int shmid = shmget(ftok("client.c", 23), ___, IPC_CREAT | IPC_EXCL | 0644);
+  char *shm = shmat(shmid, 0, 0);
+
   int semid = semget(ftok("makefile", 22), 1, 0);
   printf("[%d] before access\n", getpid());
 
