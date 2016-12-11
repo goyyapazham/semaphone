@@ -1,5 +1,8 @@
-control : control.c
+all : 
 	gcc control.c -o control
-
-client : client.c
 	gcc client.c -o client
+
+clean : 
+	rm client
+	rm control
+	rm *~
